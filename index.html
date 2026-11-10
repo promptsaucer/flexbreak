@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBreak</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap"
+    />
+    <script type="module" crossorigin src="/flexbreak/assets/index-BII5dDHZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/flexbreak/assets/index-D9-O2vLZ.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <button type="button" id="theme-toggle" class="theme-toggle"></button>
+        <h1><span aria-hidden="true">💪</span> FlexBreak</h1>
+        <p class="tagline">Get your work done. Move between it. Feel great.</p>
+      </header>
+
+      <div class="layout">
+        <div class="inputs">
+          <section class="card">
+            <h2><span aria-hidden="true">📝</span> Assignments</h2>
+            <p class="hint">What you need to do, about how long it will take, and when it's due.</p>
+            <ul id="assignment-list" class="edit-list"></ul>
+            <p id="assignments-empty" class="empty-note">No assignments yet.</p>
+            <button type="button" id="add-assignment" class="secondary">+ Add assignment</button>
+          </section>
+
+          <section class="card">
+            <h2><span aria-hidden="true">📚</span> Classes &amp; commitments</h2>
+            <p class="hint">Things that happen at the same time every week. FlexBreak won't schedule work over them.</p>
+            <ul id="commitment-list" class="edit-list"></ul>
+            <p id="commitments-empty" class="empty-note">No classes or commitments yet.</p>
+            <button type="button" id="add-commitment" class="secondary">+ Add class or commitment</button>
+          </section>
+
+          <section class="card">
+            <h2><span aria-hidden="true">⏰</span> Working hours</h2>
+            <p class="hint">When you're willing to work each day. Uncheck a day to take it off.</p>
+            <ul id="hours-list" class="hours-list"></ul>
+          </section>
+
+          <section class="card">
+            <h2><span aria-hidden="true">🏃</span> Exercise breaks</h2>
+            <p class="hint">How long you want to exercise on each 5-minute break. FlexBreak sizes the reps to fit.</p>
+            <label>
+              Exercise time per break
+              <select id="exercise-time"></select>
+            </label>
+          </section>
+        </div>
+
+        <section class="card plan" aria-live="polite">
+          <h2><span aria-hidden="true">🗓️</span> Your week</h2>
+          <p id="week-range" class="hint"></p>
+          <div id="plan-notes"></div>
+          <div id="day-list" class="day-list"></div>
+          <p id="save-status" class="save-status" role="status"></p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
