@@ -11,13 +11,18 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap"
     />
-    <script type="module" crossorigin src="/flexbreak/assets/index-CUdTcWhg.js"></script>
-    <link rel="stylesheet" crossorigin href="/flexbreak/assets/index-C5PipNf1.css">
+    <script type="module" crossorigin src="/flexbreak/assets/index-CAyROGEE.js"></script>
+    <link rel="stylesheet" crossorigin href="/flexbreak/assets/index-BiZn3ua0.css">
   </head>
   <body>
     <main>
       <header>
-        <button type="button" id="theme-toggle" class="theme-toggle"></button>
+        <div class="header-actions">
+          <button type="button" id="open-notepad" class="header-button" aria-keyshortcuts="N" title="Open the notepad (N)">
+            <span aria-hidden="true">🗒️</span> Notepad <kbd aria-hidden="true">N</kbd>
+          </button>
+          <button type="button" id="theme-toggle" class="header-button"></button>
+        </div>
         <h1><span aria-hidden="true">💪</span> FlexBreak</h1>
         <p class="tagline">Get your work done. Move between it. Feel great.</p>
       </header>
@@ -65,5 +70,23 @@
         </section>
       </div>
     </main>
+
+    <dialog id="notepad" class="notepad" aria-labelledby="notepad-title">
+      <div class="notepad-head">
+        <h2 id="notepad-title"><span aria-hidden="true">🗒️</span> Notepad</h2>
+        <button type="button" id="close-notepad" class="remove" aria-label="Close the notepad">✕</button>
+      </div>
+      <p class="hint">Jot things down while you work. Saved in this browser as you type. Press Esc to close.</p>
+      <textarea id="notepad-text" rows="12" maxlength="20000" aria-label="Notes" placeholder="e.g. Ask the TA about MP3"></textarea>
+      <div class="notepad-foot">
+        <button type="button" id="clear-notepad" class="secondary">Clear notepad</button>
+        <div id="clear-confirm" class="clear-confirm" hidden>
+          <p>Erase everything in the notepad? This can't be undone.</p>
+          <button type="button" id="confirm-clear" class="danger">Yes, clear it</button>
+          <button type="button" id="cancel-clear" class="secondary">Cancel</button>
+        </div>
+        <p id="notepad-status" class="save-status" role="status"></p>
+      </div>
+    </dialog>
   </body>
 </html>
