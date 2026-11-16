@@ -11,8 +11,8 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap"
     />
-    <script type="module" crossorigin src="/flexbreak/assets/index-CAyROGEE.js"></script>
-    <link rel="stylesheet" crossorigin href="/flexbreak/assets/index-BiZn3ua0.css">
+    <script type="module" crossorigin src="/flexbreak/assets/index-BWXh7_U3.js"></script>
+    <link rel="stylesheet" crossorigin href="/flexbreak/assets/index-DJd14o8D.css">
   </head>
   <body>
     <main>
@@ -58,6 +58,7 @@
               Exercise time per break
               <select id="exercise-time"></select>
             </label>
+            <button type="button" id="open-randomizer" class="secondary random-button">🎲 Random exercise</button>
           </section>
         </div>
 
@@ -86,6 +87,35 @@
           <button type="button" id="cancel-clear" class="secondary">Cancel</button>
         </div>
         <p id="notepad-status" class="save-status" role="status"></p>
+      </div>
+    </dialog>
+
+    <dialog id="randomizer" class="randomizer" aria-labelledby="randomizer-title">
+      <div class="notepad-head">
+        <h2 id="randomizer-title"><span aria-hidden="true">🎲</span> Random exercise</h2>
+        <button type="button" id="close-randomizer" class="remove" aria-label="Close the random exercise wheel">✕</button>
+      </div>
+      <div id="randomizer-choose">
+        <p class="hint">How long? Pick one, or let the wheel decide. The result replaces your next break's exercise.</p>
+        <div class="length-choices">
+          <button type="button" class="length-choice" data-length="short">⚡ Short <small>~1 min</small></button>
+          <button type="button" class="length-choice" data-length="medium">🔥 Medium <small>~3 min</small></button>
+          <button type="button" class="length-choice" data-length="long">🏆 Long <small>~5 min</small></button>
+          <button type="button" class="length-choice randomize" data-length="random">🎲 Randomize <small>spin for the length too</small></button>
+        </div>
+      </div>
+      <div id="randomizer-spin" hidden>
+        <p id="wheel-title" class="wheel-title"></p>
+        <div class="wheel-wrap">
+          <div class="wheel-pointer" aria-hidden="true"></div>
+          <svg id="wheel" class="wheel" viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+        </div>
+        <p id="wheel-result" class="wheel-result" role="status"></p>
+        <div id="wheel-actions" class="wheel-actions" hidden>
+          <button type="button" id="spin-again" class="secondary">Spin again</button>
+          <button type="button" id="pick-length" class="secondary">Pick a different length</button>
+          <button type="button" id="randomizer-done" class="done-button">Done</button>
+        </div>
       </div>
     </dialog>
   </body>
