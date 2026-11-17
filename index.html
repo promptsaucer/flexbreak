@@ -11,8 +11,8 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap"
     />
-    <script type="module" crossorigin src="/flexbreak/assets/index-BE29VtKU.js"></script>
-    <link rel="stylesheet" crossorigin href="/flexbreak/assets/index-X_tyMC8y.css">
+    <script type="module" crossorigin src="/flexbreak/assets/index-DjJnRdwa.js"></script>
+    <link rel="stylesheet" crossorigin href="/flexbreak/assets/index-DcmHmn0V.css">
   </head>
   <body>
     <main>
@@ -62,13 +62,42 @@
           </section>
         </div>
 
-        <section class="card plan" aria-live="polite">
-          <h2><span aria-hidden="true">🗓️</span> Your week</h2>
-          <p id="week-range" class="hint"></p>
-          <div id="plan-notes"></div>
-          <div id="day-list" class="day-list"></div>
-          <p id="save-status" class="save-status" role="status"></p>
-        </section>
+        <div class="side">
+          <section class="card plan" aria-live="polite">
+            <h2><span aria-hidden="true">🗓️</span> Your week</h2>
+            <p id="week-range" class="hint"></p>
+            <div id="plan-notes"></div>
+            <div id="day-list" class="day-list"></div>
+            <p id="save-status" class="save-status" role="status"></p>
+          </section>
+
+          <section class="card sleep" aria-labelledby="sleep-title">
+            <h2 id="sleep-title"><span aria-hidden="true">😴</span> Sleep tracker</h2>
+            <p class="hint">Each morning, log when you went to bed and woke up. Your rating covers the last 7 nights.</p>
+            <div id="sleep-rating" class="sleep-rating" aria-live="polite"></div>
+            <form id="sleep-form" class="sleep-form" novalidate>
+              <div class="sleep-times">
+                <label>Night of <input type="date" id="sleep-date" /></label>
+                <label>Went to bed <input type="time" id="sleep-bed" /></label>
+                <label>Woke up <input type="time" id="sleep-wake" /></label>
+              </div>
+              <fieldset class="rested">
+                <legend>How rested do you feel?</legend>
+                <div id="rested-choices" class="rested-choices"></div>
+              </fieldset>
+              <button type="submit" class="done-button">Save night</button>
+              <p id="sleep-status" class="save-status" role="status"></p>
+            </form>
+            <h3 class="sleep-list-title">Last 7 nights</h3>
+            <ul id="sleep-list" class="sleep-list"></ul>
+            <p id="sleep-empty" class="empty-note">No nights logged yet. Log last night to get your first rating.</p>
+            <details id="sleep-archive" class="sleep-archive" hidden>
+              <summary></summary>
+              <div id="archive-weeks" class="archive-weeks"></div>
+            </details>
+            <p class="hint sleep-note">Based only on the times you log. It's a rough guide, not medical advice.</p>
+          </section>
+        </div>
       </div>
     </main>
 
